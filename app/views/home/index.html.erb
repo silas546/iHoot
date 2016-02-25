@@ -23,34 +23,10 @@
 </div>
 </div>
 <h3>Orders</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Order</th>
-            <th>Placed by</th>
-            <th>Paid</th>
-            <th>Fulfillment</th>
-            <th>Total</th>
-          </tr>
-        </thead>
+
       <% @orders.each do |order| %>
-        <tr>
-          <td><%= link_to order.name, "https://#{current_shop.url}/admin/orders/#{order.id}", :target => 'blank' %></td>
-          <td><%= order.billing_address.name %></td>
-          <td>
-            <span class="label  <% if order.financial_status  == 'paid' %>label-success<% end %> <% if order.financial_status  == 'pending' %>label-warning<% end %> <% if order.financial_status  == 'refunded' %>label-important<% end %>"><%= order.financial_status %>
-            </span>
-          </td>
-          <td>
-            <% if !order.fulfillment_status %>
-            <span class="label">Not Fulfilled</span>
-            <% else %>
-            <span class="label label-success">Fulfilled</span>
-            <% end %>
-          </td>
-          <td><%= order.total_price %> <%= order.currency %></td>
-        </tr>
-      <% end %>
-      </table>
+
+          <p><%= link_to order.name, "https://#{current_shop.url}/admin/orders/#{order.id}", :target => 'blank' %></p>
+
       
-    <% end %>
+      <% end %>
