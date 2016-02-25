@@ -18,3 +18,14 @@
     <% end %>
   </tbody>
 </table>
+<h3>Orders</h3>
+<table>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td>
+        <a href='https://<%="#{@shop_session.url}/admin/orders/#{order.id}"%>' target="_blank"> <%= order.id %> </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
