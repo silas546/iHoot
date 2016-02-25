@@ -6,8 +6,10 @@
     });
   });
 </script>
-<h3>Products</h3>
-<table>
+<div class="col-xs-6">
+<h3 class="sub-header">Products</h3>
+<div class="table-responsive">
+<table class="table table-striped">
   <tbody>
     <% @products.each do |product| %>
       <tr>
@@ -18,5 +20,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 <h3>Orders</h3>
 
